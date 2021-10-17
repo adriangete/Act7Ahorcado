@@ -2,14 +2,14 @@
 var palabra = document.getElementById("palabraAdivinar");
 var letra= document.getElementById("letraBuscar"); 
 var aciertos= document.getElementById("aciertos");
-var guiones
+var guiones;
 var fallos= document.getElementById("fallos");
 var encontrarGuiones;
 
 var anteriores ="";
 
 palabra.addEventListener("blur", crearGuiones, false );
-aciertos.addEventListener("blur", crearGuiones, false )
+aciertos.addEventListener("blur", crearGuiones, false );
 letra.addEventListener("keyup", buscarCaracter, false );
 
 function crearGuiones(){
@@ -29,7 +29,7 @@ function buscarCaracter(){
     var posicion=palabraA.indexOf(caracterBuscar,0);
     var es_acierto=false;
 
-    while(posicion > -1){
+    while(posicion > -1 & caracterBuscar!=""){
         guiones=guiones.substring(0,posicion) 
         +caracterBuscar 
         +guiones.substr(posicion+1,guiones.length);
